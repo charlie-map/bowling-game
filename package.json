@@ -1,0 +1,20 @@
+{
+  "name": "terminal-bowling-game",
+  "version": "1.0.0",
+  "description": "A terminal-based bowling game.",
+  "main": "BowlingFrame.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint",
+    "fix": "./node_modules/.bin/eslint --fix"
+  },
+  "type": "module",
+  "author": "charlie-map",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.4.0",
+    "eslint-plugin-jsdoc": "^48.2.7",
+    "globals": "^15.3.0"
+  }
+}
