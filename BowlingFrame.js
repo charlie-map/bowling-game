@@ -13,6 +13,19 @@ export default class BowlingFrame {
         this.frame = [];
         this.index = index;
 
+        this.pins = [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+        ];
+
         this.isTenthFrame = index === 9;
         // These change depending on tenth frame.
         this.maxLength = index === 9 ? 3 : 2;
@@ -49,6 +62,16 @@ export default class BowlingFrame {
 
         // If we get to here, we can go ahead and use the copied frame.
         this.frame = copiedFrame;
+    }
+
+    /**
+     * This will "knock" over the pins passed here. This will be used for rendering if this is
+     *  the current frame.
+     *
+     * @param {number[]} pinsToKnock The zero-based index of each pin (so 0 - 9).
+     */
+    knockPins(pinsToKnock) {
+        pinsToKnock.forEach(pinToKnock => this.pins[pinToKnock] = 0);
     }
 
     /**

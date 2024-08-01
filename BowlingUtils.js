@@ -4,8 +4,12 @@ import LaneRenderer from "./Renderer/LaneRenderer.js";
 import BorderRenderer from "./Renderer/BorderRenderer.js";
 import ScoreRenderer from "./Renderer/ScoreRenderer.js";
 import Renderer from "./Renderer/Renderer.js";
+import PinRenderer from "./Renderer/PinRenderer.js";
 
 export const BowlingUtils = {
+    // A simple width constant for the bowling lane.
+    LANE_WIDTH: 39,
+
     /**
      * Generates basic bowling game instance.
      * Set to static as this is not class specific.
@@ -37,11 +41,28 @@ export const BowlingUtils = {
      */
     addGeneralRenderers(renderer, game) {
         const borderRenderer = new BorderRenderer();
+        const pinRenderer = new PinRenderer();
         const laneRenderer = new LaneRenderer(game);
         const scoreRenderer = new ScoreRenderer();
 
         borderRenderer.addRenderer(renderer);
+        pinRenderer.addRenderer(renderer);
         laneRenderer.addRenderer(renderer);
         scoreRenderer.addRenderer(renderer);
     },
+
+    /**
+     * Simple space renderer helper function here.
+     *
+     * @param {number} spaceNumber The number of spaces to render.
+     * @returns {string} The spaces
+     */
+    renderRowSpace(spaceNumber) {
+        let renderedRowSpace = '';
+        for (let buildRowSpaceIndex = 0; buildRowSpaceIndex < spaceNumber; buildRowSpaceIndex++) {
+            renderedRowSpace += ' ';
+        }
+
+        return renderedRowSpace;
+    }
 };

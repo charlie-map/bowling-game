@@ -48,7 +48,19 @@ export default class BowlingGame {
 
         this.game[this.currentFrame].setValue(value);
 
-        this.currentFrame++;
+        // If the frame is complete after setting, move on.
+        if (this.game[this.currentFrame].isFinished()) {
+            this.currentFrame++;
+        }
+    }
+
+    /**
+     * Takes an array of pin indices (zero-based, so 0-9) and will "knock them over for the corresponding frame".
+     *
+     * @param {number[]} pins The pins to knock over (0 to 9).
+     */
+    setCurrentFramePinfall(pins) {
+        this.game[this.currentFrame].knockPins(pins);
     }
 
     /**

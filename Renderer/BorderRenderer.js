@@ -19,41 +19,32 @@ export default class BorderRenderer {
 
     /**
      * Renders top border
-     *
-     * @param {BowlingGame} _game .
-     * @param {number} _line .
      * @returns {string} the top border.
      */
-    topBorder(_game, _line) {
+    topBorder() {
         return `+---------------------------------------------------------------------------------------+`;
     }
 
     /**
      * Renders bottom border
-     *
-     * @param {BowlingGame} _game .
-     * @param {number} _line .
      * @returns {string} the bottom border.
      */
-    bottomBorder(_game, _line) {
+    bottomBorder() {
         return `+---------------------------------------------------------------------------------------+`;
     }
 
     /**
      * Renders right border. This always returns the same thing.
-     *
-     * @param {BowlingGame} _game .
-     * @param {number} _line .
      * @returns {string} the right border of a specific line.
      */
-    rightBorder(_game, _line) {
+    rightBorder() {
         return ` |`;
     }
 
     /**
      * Renders left border. Note the special lines:
      *  - 0: Render '|ft' (for the number of feet that will be displayed on other indexes of this renderer).
-     *  - 12: Render '|60'
+     *  - 12: Render '45'
      *  - 35: Render '|15'
      *  - 40: Render '| 5'
      *

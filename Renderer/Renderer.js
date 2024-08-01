@@ -128,7 +128,7 @@ export default class Renderer {ß
 
         for (let columnIndex = 0; columnIndex <= this.boardWidth; columnIndex++) {
             if (!this.rendererGrid[columnIndex]?.[rowIndex]) {
-                // If process is not defined, we can just have this fail since something larger is wrong.
+                // If process is not defined, we can just have this fail since something larger is wrong with said system.
                 // eslint-disable-next-line no-undef
                 process.stdout.write(" ");
                 continue;

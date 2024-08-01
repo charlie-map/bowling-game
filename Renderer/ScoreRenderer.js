@@ -7,7 +7,7 @@ export default class ScoreRenderer {
 
     /**
      * Adds the score renderer to the global renderer.
-     *ÍÍÍ
+     *
      * @param {Renderer} renderer .
      */
     addRenderer(renderer) {
